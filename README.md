@@ -1,69 +1,93 @@
 # CollecTech
 
-## Build Setup
+技術記事を中心としたブログサイトです。
+
+## ローカル環境の立ち上げ手順
+
+ローカル環境を立ち上げ
 
 ```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
 $ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
 ```
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+## ガイドライン
 
-## Special Directories
+注意事項を列挙いたします。
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+### ブランチ名
 
-### `assets`
+ユーザー名/タスク名
 
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
+```bash
+例）taro/contactLayout
+```
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
+### 命名規則
 
-### `components`
+#### コンポーネント/インスタンス オプション順序
 
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
+- props
+- data
+- computed
+- mounted
+- methods
+- asyncData
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
+#### ファイル名・コンポーネント名
 
-### `layouts`
+複数単語のパスカルケースで記述。
 
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
+```bash
+例）ContactTanks
+```
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
+#### JavaScript 部分
 
+キャメルケースで記述。
 
-### `pages`
+```bash
+例）emailLogin
+```
 
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
+### コンポーネント設計
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
+- PC ヘッダー
+- スマホヘッダー
+- サイドバー
+- PC フッター
+- スマホフッター
+- 最新の記事カード
+- メンバーカード
+- 人気の記事カード（サイドバー）
+- カテゴリー名カード（サイドバー）
+- ポートフォリオカード
+- ブログ記事
 
-### `plugins`
+### layouts ディレクトリ
 
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
+- 最新記事一覧ページ
+- アーカイブ一覧ページ
+- メンバー一覧ページ
+- プロフィールページ
+- お問い合わせページ
+- お問い合わせ完了ページ
+- エラー表示ページ
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
+### CSS の余白設定
 
-### `static`
+余白の打ち消しが起こらないよう、基本的に`margin-bottom`で対応する。
+（どうしても難しい場合のみ`margin-top`を使用する。）
 
-This directory contains your static files. Each file inside this directory is mapped to `/`.
+### 画像の管理
 
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
+ファビコンは static ディレクトリに。その他画像は assets/images 内にて、下記のように管理する。
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
+|       種類       | ファイル名     |
+| :--------------: | :------------- |
+|   タイトル画像   | ttl-画像名.jpg |
+| プロフィール画像 | prf-画像名.jpg |
+| SNS アイコン画像 | sns-画像名.jpg |
 
-### `store`
+## 各ページでの実装事項
 
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+後日記載いたします。
